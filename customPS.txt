@@ -1,0 +1,70 @@
+Power Shell setup
+-open power shell settings (right click) to disable logo
+
+
+
+
+
+- showing git branches
+- showing custom text
+
+
+$foregroundColor = 'white'
+$foregroundColor2 = 'white'
+$time = Get-Date -format r
+$psVersion= $host.Version
+$curUser= (Get-ChildItem Env:\USERNAME).Value
+$curComp= (Get-ChildItem Env:\COMPUTERNAME).Value
+
+Write-Host "Howdy, David!" -foregroundColor $foregroundColor
+Write-Host "Today's date is:" $time -foregroundColor $foregroundColor
+Write-Host "You're running PowerShell version: $psVersion" -foregroundColor Green
+Write-Host "Your computer name is: $curComp" -foregroundColor Green
+Write-Host "Happy coding!" `n -foregroundColor $foregroundColor
+
+function Write-BranchName () {
+    try {
+        $branch = git rev-parse --abbrev-ref HEAD
+
+        if ($branch -eq "HEAD") {
+            # we're probably in detached HEAD state, so print the SHA
+            $branch = git rev-parse --short HEAD
+            Write-Host " ($branch)" -ForegroundColor "red"
+        }
+        else {
+            # we're on an actual branch, so print it
+            Write-Host " ($branch)" -ForegroundColor "blue"
+        }
+    } catch {
+        # we'll end up here if we're in a newly initiated git repo
+        Write-Host " (no branches yet)" -ForegroundColor "yellow"
+    }
+}
+
+function Prompt {
+
+$curtime = Get-Date
+$curDir = Get-Location
+
+Write-Host -NoNewLine "$curUser" -foregroundColor $foregroundColor
+Write-Host -NoNewLine "$" -foregroundColor Green
+Write-Host -NoNewLine "roglic" `n -foregroundColor $foregroundColor
+$path = "$($executionContext.SessionState.Path.CurrentLocation)"
+$userPrompt = "$('>' * ($nestedPromptLevel + 1)) " 
+Write-Host -NoNewline
+
+    if (Test-Path .git) {
+        Write-Host $path -NoNewline -ForegroundColor $foregroundColor2 
+        Write-BranchName
+    }
+    else {
+        # we're not in a repo so don't bother displaying branch name/sha
+        Write-Host $path -ForegroundColor $foregroundColor2 
+    }
+
+    return $userPrompt
+}
+
+$host.UI.RawUI.WindowTitle = "PS >> User: $curUser >> Current DIR: $((Get-Location).Path)"
+
+Return " "
