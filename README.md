@@ -59,47 +59,43 @@
 ## About The Project
 
 The startup design of PowerShell
-[![Product Name Screen Shot][product-screenshot]](https://example.com) <br />
+[![Product Name Screen Shot][product-screenshot]](https://example.com)
 Added the function to show in which branch are you working
 [![Product Name Screen Shot][product-screenshot2]](https://example.com)
 
 <!-- GETTING STARTED -->
 ## Getting Started
 
-This is an example of how you may give instructions on setting up your project locally.
-To get a local copy up and running follow these simple example steps.
+Before we start please check the below prerequisites.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
-* npm
-  ```sh
-  npm install npm@latest -g
-  ```
+Installed Power Shell & Visual Studio Code
 
 ### Installation
 
-_Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
-   ```sh
-   git clone https://github.com/your_username_/Project-Name.git
-   ```
-3. Install NPM packages
-   ```sh
-   npm install
-   ```
-4. Enter your API in `config.js`
+1. Get the PowerShell for FREE from [MS Store](https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701)
+2. Get the Visual Studio Code for FREE from [Visual Studio Code](https://code.visualstudio.com/)
+3. In the Terminal copy
    ```js
-   const API_KEY = 'ENTER YOUR API';
+   code $profile
    ```
+4. Visual Studio Code will open and copy the code from the [customPS.txt](https://github.com/Daichisan/power-shell-custom-display/blob/main/customPS.txt)
+5. Save it and restart PowerShell
+6. Reopen PowerShell and right click (open setttings)
+7. Check JSON file (left corner below)
+8. Find the line (below you will see "name" : "PowerShell" )
+  ```js
+   "commandLine": "pwsh.exe"
+   ```
+9. Change the line with
+  ```js
+   "commandLine": "pwsh.exe -nologo"
+   ```
+10. Save and close PowerShell
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
-
-
-
-
 
 
 <!-- ROADMAP -->
