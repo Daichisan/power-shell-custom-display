@@ -17,10 +17,10 @@
     <img src="images/logo.png" alt="Logo" width="80" height="80">
   </a>
 
-  <h3 align="center">power-shell-custom-display</h3>
+  <h3 align="center">Power Shell Custom Display</h3>
 
   <p align="center">
-    An awesome README template to jumpstart your projects!
+    An awesome template for changing the look of PS!
     <br />
     <a href="https://github.com/Daichisan/power-shell-custom-display"><strong>Explore the docs »</strong></a>
     <br />
