@@ -1,14 +1,3 @@
-Power Shell setup
--open power shell settings (right click) to disable logo
-
-
-
-
-
-- showing git branches
-- showing custom text
-
-
 $foregroundColor = 'white'
 $foregroundColor2 = 'white'
 $time = Get-Date -format r
@@ -16,12 +5,13 @@ $psVersion= $host.Version
 $curUser= (Get-ChildItem Env:\USERNAME).Value
 $curComp= (Get-ChildItem Env:\COMPUTERNAME).Value
 
-Write-Host "Howdy, David!" -foregroundColor $foregroundColor
+Write-Host "Howdy, $curUser!" -foregroundColor $foregroundColor
 Write-Host "Today's date is:" $time -foregroundColor $foregroundColor
 Write-Host "You're running PowerShell version: $psVersion" -foregroundColor Green
 Write-Host "Your computer name is: $curComp" -foregroundColor Green
 Write-Host "Happy coding!" `n -foregroundColor $foregroundColor
 
+#function for checking branches
 function Write-BranchName () {
     try {
         $branch = git rev-parse --abbrev-ref HEAD
@@ -40,6 +30,7 @@ function Write-BranchName () {
         Write-Host " (no branches yet)" -ForegroundColor "yellow"
     }
 }
+
 
 function Prompt {
 
