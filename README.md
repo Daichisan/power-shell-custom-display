@@ -24,43 +24,12 @@
     <br />
   </p>
 </div>
-
-
-
-<!-- TABLE OF CONTENTS -->
-<details>
-  <summary>Table of Contents</summary>
-  <ol>
-    <li>
-      <a href="#about-the-project">About The Project</a>
-      <ul>
-        <li><a href="#built-with">Built With</a></li>
-      </ul>
-    </li>
-    <li>
-      <a href="#getting-started">Getting Started</a>
-      <ul>
-        <li><a href="#prerequisites">Prerequisites</a></li>
-        <li><a href="#installation">Installation</a></li>
-      </ul>
-    </li>
-    <li><a href="#usage">Usage</a></li>
-    <li><a href="#roadmap">Roadmap</a></li>
-    <li><a href="#contributing">Contributing</a></li>
-    <li><a href="#license">License</a></li>
-    <li><a href="#contact">Contact</a></li>
-    <li><a href="#acknowledgments">Acknowledgments</a></li>
-  </ol>
-</details>
-
-
-
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-The startup design of PowerShell
+PowerShell startup design:
 [![Product Name Screen Shot][product-screenshot]](https://example.com)
-Added the function to show in which branch are you working
+Added function for showing the branch name:
 [![Product Name Screen Shot][product-screenshot2]](https://example.com)
 
 <!-- GETTING STARTED -->
@@ -77,7 +46,7 @@ Installed Power Shell & Visual Studio Code
 
 1. Get the PowerShell for FREE from [MS Store](https://apps.microsoft.com/store/detail/windows-terminal/9N0DX20HK701)
 2. Get the Visual Studio Code for FREE from [Visual Studio Code](https://code.visualstudio.com/)
-3. In the Terminal copy
+3. In the PowerShell paste
    ```js
    code $profile
    ```
